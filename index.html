@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080910">
+  <meta name="description" content="One square. One rule. Flip gravity, thread the gates, and don't touch red. A free, offline-ready arcade game.">
+  <title>DON'T TOUCH RED — Gravity survival</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='3' fill='%2366F6E1'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./game.js" defer></script>
+</head>
+<body>
+<main class="shell">
+  <header class="masthead"><a class="brand" href="./" aria-label="Don't Touch Red home"><span class="brand-mark" aria-hidden="true"></span> DON'T TOUCH <span>RED</span><sup>01</sup></a><span class="edition">GRAVITY SURVIVAL / ARCADE</span></header>
+  <section class="game" aria-label="Don't Touch Red arcade game">
+    <div class="toolbar">
+      <div class="stat"><span class="label">SCORE</span><strong id="score">000</strong></div>
+      <div class="stat best-stat"><span class="label">PERSONAL BEST</span><strong id="best">000</strong></div>
+      <div class="gravity"><span class="label">GRAVITY</span><span id="gravity">↓ DOWN</span></div>
+      <div class="tools"><button id="sound" class="icon-button" aria-label="Enable sound" aria-pressed="false">♪ <span id="sound-text">OFF</span></button><button id="pause" class="icon-button" aria-label="Pause game" disabled>Ⅱ</button></div>
+    </div>
+    <div class="arena" id="arena">
+      <canvas id="canvas" tabindex="0" aria-label="Game arena. Press Space or tap to reverse gravity. Avoid red gates and boundaries.">Your browser needs HTML Canvas to play.</canvas>
+      <div class="arena-tag" aria-hidden="true"><span class="live-dot"></span> <span id="arena-status">SYSTEM READY</span></div>
+      <section class="overlay" id="start-screen" aria-labelledby="start-title">
+        <div class="overlay-card"><p class="eyebrow">ONE SQUARE. ONE RULE.</p><h1 id="start-title">STAY AWAY<br>FROM <span>RED.</span></h1><p class="description">Flip gravity. Thread the gaps.<br>See how long you can last.</p><button class="primary" id="start">START RUN <span aria-hidden="true">↗</span></button><p class="start-best">YOUR BEST <strong id="start-best">000</strong></p></div>
+      </section>
+      <section class="overlay" id="pause-screen" aria-labelledby="pause-title" hidden><div class="overlay-card"><p class="eyebrow">TAKE A BREATH</p><h2 id="pause-title">RUN<br><span class="purple">PAUSED.</span></h2><p class="description">Your next move can wait.</p><button class="primary" id="resume">RESUME RUN <span aria-hidden="true">↗</span></button></div></section>
+      <section class="overlay" id="over-screen" aria-labelledby="over-title" hidden><div class="overlay-card"><p class="eyebrow" id="record">RUN ENDED</p><h2 id="over-title">YOU TOUCHED<br><span>RED.</span></h2><div class="results"><div><span class="label">FINAL SCORE</span><strong id="final-score">000</strong></div><div><span class="label">PERSONAL BEST</span><strong id="final-best">000</strong></div></div><button class="primary" id="retry">TRY AGAIN <span aria-hidden="true">↻</span></button><p class="description small">One more run. You’ve got this.</p></div></section>
+    </div>
+    <footer class="game-footer"><span><i class="cyan-dot"></i> YOU ARE CYAN. <b>RED IS FATAL.</b></span><span id="pace">01 / WARM UP</span></footer>
+  </section>
+  <div class="instructions"><div><kbd>SPACE</kbd><span> / </span><kbd>CLICK</kbd><span> / </span><kbd>TAP</kbd><span> to flip gravity</span></div><div class="pause-hint"><kbd>P</kbd><span> or </span><kbd>ESC</kbd><span> to pause</span></div></div>
+  <p class="bottom-note">A LITTLE FOCUS. A LOT OF “ONE MORE TRY.”</p>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+  <noscript><p class="noscript">Please enable JavaScript to play.</p></noscript>
+</main>
+</body>
+</html>
